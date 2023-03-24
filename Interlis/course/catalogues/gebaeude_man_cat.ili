@@ -1,0 +1,38 @@
+INTERLIS 2.3;
+
+MODEL Gebaeude (de)
+AT "https://signedav.github.io/usabilitydave/"
+VERSION "2021-12-21"  =
+  IMPORTS CatalogueObjects_V1;
+
+  TOPIC Katalog =
+
+    CLASS MaterialItem
+    EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      Bezeichnung : MANDATORY TEXT;
+    END MaterialItem;
+
+    STRUCTURE MaterialItemRef
+    EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+      Reference (EXTENDED) : MANDATORY REFERENCE TO (EXTERNAL) MaterialItem;
+    END MaterialItemRef;
+
+    STRUCTURE MandatoryMaterialItemRef
+    EXTENDS CatalogueObjects_V1.Catalogues.MandatoryCatalogueReference =
+      Reference (EXTENDED) : MANDATORY REFERENCE TO (EXTERNAL) MaterialItem;
+    END MandatoryMaterialItemRef;
+
+  END Katalog;
+
+  TOPIC Gebaeude =
+    DEPENDS ON Gebaeude.Katalog;
+
+    CLASS Haus =
+      Name: TEXT;
+      Material : MANDATORY Gebaeude.Katalog.MaterialItemRef;
+      ManMaterial : MANDATORY Gebaeude.Katalog.MandatoryMaterialItemRef;
+    END Haus;
+
+  END Gebaeude;
+
+END Gebaeude.

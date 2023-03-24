@@ -1,0 +1,146 @@
+INTERLIS 2.3;
+
+MODEL Geom_Res_GeometryOfInterest (en) 
+AT "https://signedav.github.io/usabilitydave/models"
+VERSION "2020-06-22" =
+  
+    IMPORTS GeometryCHLV95_V1, Units;
+    IMPORTS UNQUALIFIED INTERLIS;
+  
+    DOMAIN
+        Line = POLYLINE WITH (STRAIGHTS) VERTEX GeometryCHLV95_V1.Coord2;
+        Surface = SURFACE WITH (STRAIGHTS) VERTEX GeometryCHLV95_V1.Coord2 WITHOUT OVERLAPS > 0.005;
+        
+    TOPIC DM =
+        CLASS TheObject =
+            Name: TEXT;
+        END TheObject;
+
+        CLASS GeometryOfInterest (ABSTRACT)=
+            !! could have additional attributes like quality here
+        END GeometryOfInterest;
+
+        CLASS PointGeometry
+        EXTENDS GeometryOfInterest =
+            Geometry : MANDATORY GeometryCHLV95_V1.Coord2;
+        END PointGeometry;
+
+        CLASS LineGeometry
+        EXTENDS GeometryOfInterest =
+            Geometry : MANDATORY Line;
+        END LineGeometry;
+
+        CLASS SurfaceGeometry
+        EXTENDS GeometryOfInterest =
+            Geometry : MANDATORY Surface;
+        END SurfaceGeometry; 
+
+        ASSOCIATION GeometryOfInterest_TheObject =
+            TheObject -<#> {1} TheObject;
+            GeometryOfInterest -- {1..*} GeometryOfInterest;
+        END GeometryOfInterest_TheObject;
+    END DM;
+END Geom_Res_GeometryOfInterest.
+
+
+MODEL Geom_Res_NoGeometryOfInterest (en) 
+AT "https://signedav.github.io/usabilitydave/models"
+VERSION "2020-06-22" =
+  
+    IMPORTS GeometryCHLV95_V1, Units;
+    IMPORTS UNQUALIFIED INTERLIS;
+  
+    DOMAIN
+        Line = POLYLINE WITH (STRAIGHTS) VERTEX GeometryCHLV95_V1.Coord2;
+        Surface = SURFACE WITH (STRAIGHTS) VERTEX GeometryCHLV95_V1.Coord2 WITHOUT OVERLAPS > 0.005;
+        
+    TOPIC DM =
+        CLASS TheObject =
+            Name: TEXT;
+        END TheObject;
+
+        CLASS PointGeometry =
+            Geometry : MANDATORY GeometryCHLV95_V1.Coord2;
+        END PointGeometry;
+
+        CLASS LineGeometry =
+            Geometry : MANDATORY Line;
+        END LineGeometry;
+
+        CLASS SurfaceGeometry =
+            Geometry : MANDATORY Surface;
+        END SurfaceGeometry; 
+
+        ASSOCIATION Geometries_TheObject = 
+            !! could have additional attributes like quality here
+            TheObject -<#> {1} TheObject;
+            PointGeometry -- {1..*} PointGeometry;
+            LineGeometry -- {1..*} LineGeometry;
+            SurfaceGeometry -- {1..*} SurfaceGeometry;
+        END Geometries_TheObject;
+    END DM;
+END Geom_Res_NoGeometryOfInterest.
+
+MODEL Geom_Res_GeometryOfInterest_MultiTypeGeom (en) 
+AT "https://signedav.github.io/usabilitydave/models"
+VERSION "2020-06-22" =
+  
+    IMPORTS GeometryCHLV95_V1, Units;
+    IMPORTS UNQUALIFIED INTERLIS;
+  
+    DOMAIN
+        Line = POLYLINE WITH (STRAIGHTS) VERTEX GeometryCHLV95_V1.Coord2;
+        Surface = SURFACE WITH (STRAIGHTS) VERTEX GeometryCHLV95_V1.Coord2 WITHOUT OVERLAPS > 0.005;
+        
+    TOPIC DM =
+        CLASS TheObject =
+            Name: TEXT;
+        END TheObject;
+
+        CLASS GeometryOfInterest=           
+            !! could have additional attributes like quality here
+            Point: GeometryCHLV95_V1.Coord2;
+            Line: Line;
+            Surface: Surface;
+        END GeometryOfInterest;
+
+        ASSOCIATION GeometryOfInterest_TheObject =
+            TheObject -<#> {1} TheObject;
+            GeometryOfInterest -- {1..*} GeometryOfInterest;
+        END GeometryOfInterest_TheObject;
+    END DM;
+END Geom_Res_GeometryOfInterest_MultiTypeGeom.
+
+MODEL Geom_Res_Object_MultiBag (en) 
+AT "https://signedav.github.io/usabilitydave/models"
+VERSION "2020-06-22" =
+  
+    IMPORTS GeometryCHLV95_V1, Units;
+    IMPORTS UNQUALIFIED INTERLIS;
+  
+    DOMAIN
+        Line = POLYLINE WITH (STRAIGHTS) VERTEX GeometryCHLV95_V1.Coord2;
+        Surface = SURFACE WITH (STRAIGHTS) VERTEX GeometryCHLV95_V1.Coord2 WITHOUT OVERLAPS > 0.005;
+
+        STRUCTURE PointStructure = 
+            Point: GeometryCHLV95_V1.Coord2;
+        END PointStructure;
+            
+        STRUCTURE LineStructure = 
+            Line: Line;
+        END LineStructure;
+        
+        STRUCTURE SurfaceStructure = 
+            Surface: Surface;
+        END SurfaceStructure;
+
+    TOPIC DM =
+        CLASS TheObject=
+            Name: TEXT;
+            !! could NOT have additional attributes like quality here
+            Point: PointStructure;
+            Line: LineStructure;
+            Surface: SurfaceStructure;
+        END TheObject;
+    END DM;
+END Geom_Res_Object_MultiBag.

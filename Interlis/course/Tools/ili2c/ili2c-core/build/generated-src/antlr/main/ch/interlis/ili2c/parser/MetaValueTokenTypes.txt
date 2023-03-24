@@ -1,0 +1,10 @@
+// $ANTLR : metavalue.g -> MetaValueTokenTypes.txt$
+MetaValue    // output token vocab name
+VALUE=4
+EQUALS("'='")=5
+SEMI("';'")=6
+STRING=7
+WS=8
+COMMA("','")=9
+ESC=10
+HEXDIGIT=11

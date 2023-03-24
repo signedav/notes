@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><TRANSFER xmlns="http://www.interlis.ch/INTERLIS2.3">
+<HEADERSECTION SENDER="ili2pg-4.5.0-fc023c8d2d8cd44d792927e45dc80c1ad973f095" VERSION="2.3"><MODELS><MODEL NAME="CatalogueObjects_V1" VERSION="2011-08-30" URI="http://www.geo.admin.ch"></MODEL><MODEL NAME="CatalogueObjectTrees_V1" VERSION="2011-08-30" URI="http://www.geo.admin.ch"></MODEL><MODEL NAME="DMGeolAssets" VERSION="2021-07-20" URI="mailto:localhost"></MODEL></MODELS></HEADERSECTION>
+<DATASECTION>
+<DMGeolAssets.Catalogues BID="DMGeolAssets.Catalogues">
+<DMGeolAssets.Catalogues.PurposeItem TID="1"><Name>geologie</Name></DMGeolAssets.Catalogues.PurposeItem>
+<DMGeolAssets.Catalogues.PurposeItem TID="2"><Name>geometry</Name></DMGeolAssets.Catalogues.PurposeItem>
+<DMGeolAssets.Catalogues.PurposeItem TID="3"><Name>geography</Name></DMGeolAssets.Catalogues.PurposeItem>
+</DMGeolAssets.Catalogues>
+<DMGeolAssets.CoreGeolAsset BID="DMGeolAssets.CoreGeolAsset">
+<DMGeolAssets.CoreGeolAsset.Asset TID="5"><Purpose><DMGeolAssets.Catalogues.PurposeRef><Reference REF="1"></Reference><Percentage>123</Percentage></DMGeolAssets.Catalogues.PurposeRef></Purpose><AndSoOn>new</AndSoOn></DMGeolAssets.CoreGeolAsset.Asset>
+</DMGeolAssets.CoreGeolAsset>
+</DATASECTION>
+</TRANSFER>

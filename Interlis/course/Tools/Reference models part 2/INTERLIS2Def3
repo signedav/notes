@@ -1,0 +1,11 @@
+INTERLIS 2.3;
+
+MODEL ModelDef4 (en)
+AT "mailto:dave@localhost"
+VERSION "2021-07-08"  =
+
+  TOPIC TopicDef5 =
+
+  END TopicDef5;
+
+END ModelDef4.

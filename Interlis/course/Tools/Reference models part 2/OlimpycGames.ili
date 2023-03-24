@@ -1,0 +1,85 @@
+INTERLIS 2.3;
+
+MODEL OlimpycGames (en_US)
+AT "mailto:Fabian@localhost"
+VERSION "2021-06-23"  =
+  IMPORTS CoordSys,Units;
+
+  REFSYSTEM BASKET BCoordSys~CoordSys.CoordsysTopic
+    OBJECTS OF GeoEllipsoidal:
+      WGS84;
+
+  DOMAIN
+
+    SportType = (
+      Athletics,
+      Boxing,
+      Archery,
+      Swimming,
+      Gymnastics,
+      Ski
+    );
+
+    WGS84Coord = COORD -90.000 .. 90.000 [Units.Angle_Degree]{WGS84[1]}, 0.000 .. 359.999 CIRCULAR [Units.Angle_Degree]{WGS84[2]};
+
+  TOPIC Events =
+
+    CLASS Event =
+      Sport : MANDATORY OlimpycGames.SportType;
+      Date : INTERLIS.XMLDate;
+    END Event;
+
+    CLASS OlympicGame =
+      Name : MANDATORY TEXT*50;
+      Year : MANDATORY 1896 .. 2500;
+    END OlympicGame;
+
+    CLASS Player =
+      Name : TEXT*150;
+      Type : (
+        MultiPlayer,
+        SinglePlayer
+      );
+    END Player;
+
+    STRUCTURE SportArea =
+      SportName : OlimpycGames.SportType;
+      SportArea : 0.00000 .. 1.00000 [Units.km2];
+    END SportArea;
+
+    CLASS SportCenter (ABSTRACT) =
+      Location : OlimpycGames.WGS84Coord;
+      Name : TEXT*150;
+      Capacity : 0 .. 1000000;
+    END SportCenter;
+
+    CLASS MultiSports
+    EXTENDS SportCenter =
+      Areas : LIST {1..*} OF OlimpycGames.Events.SportArea;
+    END MultiSports;
+
+    CLASS SingleSport
+    EXTENDS SportCenter =
+      Area : MANDATORY OlimpycGames.Events.SportArea;
+    END SingleSport;
+
+    ASSOCIATION Competition =
+      olympics -- {1} OlympicGame;
+      competition -- {1..*} Event;
+    END Competition;
+
+    ASSOCIATION Location =
+      event -- {0..*} Event;
+      center -- {1} SportCenter;
+    END Location;
+
+    ASSOCIATION Resutls =
+      event -- {0..*} Event;
+      player -- {0..*} Player;
+      Score : MANDATORY 0 .. 10;
+      Reward : MANDATORY 0 .. 10000000 [Units.USD];
+    END Resutls;
+
+  END Events;
+
+END OlimpycGames.

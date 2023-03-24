@@ -1,0 +1,40 @@
+INTERLIS 2.3;
+
+MODEL ParalimpycGames (en)
+AT "mailto:dave@localhost"
+VERSION "2021-07-08"  =
+  IMPORTS OlimpycGames;
+
+  TOPIC Events
+  EXTENDS OlimpycGames.Events =
+    DEPENDS ON OlimpycGames.Events;
+
+    DOMAIN
+
+      SportType = (
+        Atlethics(
+          Marathon,
+          HalfMarathon,
+          sprint100m
+        ),
+        Swimming(
+          Butterfly,
+          Freestyle
+        )
+      );
+
+    CLASS DisabledPlayer
+    EXTENDS OlimpycGames.Events.Player =
+      Disability : (
+        Anotherdiability,
+        WalkingDiability
+      );
+    END DisabledPlayer;
+
+    ASSOCIATION Resutls(EXTENDED) =
+      Reward (EXTENDED) : MANDATORY 1000 .. 10000;
+    END Resutls;
+
+  END Events;
+
+END ParalimpycGames.

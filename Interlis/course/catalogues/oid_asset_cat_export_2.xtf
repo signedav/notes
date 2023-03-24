@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><TRANSFER xmlns="http://www.interlis.ch/INTERLIS2.3">
+<HEADERSECTION SENDER="ili2gpkg-4.5.0-fc023c8d2d8cd44d792927e45dc80c1ad973f095" VERSION="2.3"><MODELS><MODEL NAME="CatalogueObjects_V1" VERSION="2011-08-30" URI="http://www.geo.admin.ch"></MODEL><MODEL NAME="CatalogueObjectTrees_V1" VERSION="2011-08-30" URI="http://www.geo.admin.ch"></MODEL><MODEL NAME="DMGeolAssets" VERSION="2021-07-20" URI="mailto:localhost"></MODEL></MODELS></HEADERSECTION>
+<DATASECTION>
+<DMGeolAssets.Catalogues BID="DMGeolAssets.Catalogues">
+<DMGeolAssets.Catalogues.PurposeItem TID="13341d36-c211-4ca5-92a8-1d93b06a7faa"><IsSuperItem>true</IsSuperItem><IsUseable>false</IsUseable><Name>geology</Name></DMGeolAssets.Catalogues.PurposeItem>
+<DMGeolAssets.Catalogues.PurposeItem TID="fe96874c-eef1-4376-a9aa-42aa3325e23e"><IsSuperItem>false</IsSuperItem><IsUseable>true</IsUseable><Parent REF="13341d36-c211-4ca5-92a8-1d93b06a7faa"></Parent><Name>geol chil1</Name></DMGeolAssets.Catalogues.PurposeItem>
+<DMGeolAssets.Catalogues.PurposeItem TID="fc655d3c-60da-4f81-aae8-37ad5afed23b"><IsSuperItem>false</IsSuperItem><IsUseable>true</IsUseable><Parent REF="13341d36-c211-4ca5-92a8-1d93b06a7faa"></Parent><Name>geol child 2</Name></DMGeolAssets.Catalogues.PurposeItem>
+<DMGeolAssets.Catalogues.PurposeItem TID="315e9f90-abce-465d-aee7-5f4902ebe2b7"><IsSuperItem>true</IsSuperItem><IsUseable>false</IsUseable><Name>geography</Name></DMGeolAssets.Catalogues.PurposeItem>
+<DMGeolAssets.Catalogues.PurposeItem TID="b487c2fd-8f6c-41df-b66a-79e992184aa0"><IsSuperItem>false</IsSuperItem><IsUseable>true</IsUseable><Parent REF="315e9f90-abce-465d-aee7-5f4902ebe2b7"></Parent><Name>geogra 1</Name></DMGeolAssets.Catalogues.PurposeItem>
+<DMGeolAssets.Catalogues.PurposeItem TID="a1a1aabb-6d63-46bd-b226-ebe7bbb0bac5"><IsSuperItem>false</IsSuperItem><IsUseable>true</IsUseable><Parent REF="315e9f90-abce-465d-aee7-5f4902ebe2b7"></Parent><Name>geogra 2</Name></DMGeolAssets.Catalogues.PurposeItem>
+<DMGeolAssets.Catalogues.PurposeItem TID="441c6a59-227c-4469-8ef6-68cb31cfd983"><IsSuperItem>true</IsSuperItem><IsUseable>false</IsUseable><Name>wood</Name></DMGeolAssets.Catalogues.PurposeItem>
+<DMGeolAssets.Catalogues.PurposeItem TID="c3033124-fd6d-4010-ba1e-245e97bdf790"><IsSuperItem>false</IsSuperItem><IsUseable>true</IsUseable><Parent REF="441c6a59-227c-4469-8ef6-68cb31cfd983"></Parent><Name>tree</Name></DMGeolAssets.Catalogues.PurposeItem>
+</DMGeolAssets.Catalogues>
+<DMGeolAssets.CoreGeolAsset BID="DMGeolAssets.CoreGeolAsset">
+</DMGeolAssets.CoreGeolAsset>
+</DATASECTION>
+</TRANSFER>

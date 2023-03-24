@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><TRANSFER xmlns="http://www.interlis.ch/INTERLIS2.3">
+<HEADERSECTION SENDER="ili2pg-4.5.0-fc023c8d2d8cd44d792927e45dc80c1ad973f095" VERSION="2.3"><MODELS><MODEL NAME="CoordSys" VERSION="2015-11-24" URI="http://www.interlis.ch/models"></MODEL><MODEL NAME="Units" VERSION="2012-02-20" URI="http://www.interlis.ch/models"></MODEL><MODEL NAME="OlimpycGames" VERSION="2021-06-23" URI="mailto:Fabian@localhost"></MODEL></MODELS></HEADERSECTION>
+<DATASECTION>
+<OlimpycGames.Events BID="OlimpycGames.Events">
+<OlimpycGames.Events.OlympicGame TID="e73e136e-c344-4334-9077-96323960fa3c"><Name>Fancylympics</Name><Year>1984</Year></OlimpycGames.Events.OlympicGame>
+<OlimpycGames.Events.Player TID="b7095fca-14d0-435b-9234-62d4226af999"><Name>Gaming</Name><Type>MultiPlayer</Type></OlimpycGames.Events.Player>
+<OlimpycGames.Events.SportCenter TID="e747a102-3fb0-4a51-8aa7-611cb1ddec91"><Location><COORD><C1>0.000</C1><C2>329.800</C2></COORD></Location><Name>Sportysport</Name><Capacity>200</Capacity></OlimpycGames.Events.SportCenter>
+<OlimpycGames.Events.Event TID="77106fbd-b452-43eb-8fb9-a13e50977014"><Sport>Boxing</Sport><center REF="e747a102-3fb0-4a51-8aa7-611cb1ddec91"></center><olympics REF="e73e136e-c344-4334-9077-96323960fa3c"></olympics></OlimpycGames.Events.Event>
+</OlimpycGames.Events>
+</DATASECTION>
+</TRANSFER>

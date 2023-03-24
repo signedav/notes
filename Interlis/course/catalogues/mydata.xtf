@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><TRANSFER xmlns="http://www.interlis.ch/INTERLIS2.3">
+<HEADERSECTION SENDER="ili2pg-4.5.0-fc023c8d2d8cd44d792927e45dc80c1ad973f095" VERSION="2.3"><MODELS><MODEL NAME="CatalogueObjects_V1" VERSION="2011-08-30" URI="http://www.geo.admin.ch"></MODEL><MODEL NAME="CatalogueObjectTrees_V1" VERSION="2011-08-30" URI="http://www.geo.admin.ch"></MODEL><MODEL NAME="MyModel" VERSION="2021-07-20" URI="mailto:localhost"></MODEL></MODELS></HEADERSECTION>
+<DATASECTION>
+<MyModel.MyDataTopic BID="4">
+<MyModel.MyDataTopic.MyClass TID="13"><Type><MyModel.Catalogues.Cat42Ref><Reference REF="10"></Reference></MyModel.Catalogues.Cat42Ref></Type><AnyOtherMeaningfulAttribute>blah blah</AnyOtherMeaningfulAttribute></MyModel.MyDataTopic.MyClass>
+<MyModel.MyDataTopic.MyClass TID="14"><Type><MyModel.Catalogues.Cat42Ref><Reference REF="10"></Reference></MyModel.Catalogues.Cat42Ref></Type><AnyOtherMeaningfulAttribute>boo boo</AnyOtherMeaningfulAttribute><AndSoOn>u-huh</AndSoOn></MyModel.MyDataTopic.MyClass>
+<MyModel.MyDataTopic.MyClass TID="15"><Type><MyModel.Catalogues.Cat42Ref><Reference REF="12"></Reference></MyModel.Catalogues.Cat42Ref></Type><AnyOtherMeaningfulAttribute>lorem ipsum</AnyOtherMeaningfulAttribute><AndSoOn>wow</AndSoOn></MyModel.MyDataTopic.MyClass>
+</MyModel.MyDataTopic>
+</DATASECTION>
+</TRANSFER>

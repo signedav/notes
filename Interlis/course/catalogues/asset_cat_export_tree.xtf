@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><TRANSFER xmlns="http://www.interlis.ch/INTERLIS2.3">
+<HEADERSECTION SENDER="ili2pg-4.5.0-fc023c8d2d8cd44d792927e45dc80c1ad973f095" VERSION="2.3"><MODELS><MODEL NAME="CatalogueObjects_V1" VERSION="2011-08-30" URI="http://www.geo.admin.ch"></MODEL><MODEL NAME="CatalogueObjectTrees_V1" VERSION="2011-08-30" URI="http://www.geo.admin.ch"></MODEL><MODEL NAME="DMGeolAssets" VERSION="2021-07-20" URI="mailto:localhost"></MODEL></MODELS></HEADERSECTION>
+<DATASECTION>
+<DMGeolAssets.Catalogues BID="DMGeolAssets.Catalogues">
+<DMGeolAssets.Catalogues.PurposeItem TID="3"><IsSuperItem>true</IsSuperItem><IsUseable>true</IsUseable><Name>geology</Name></DMGeolAssets.Catalogues.PurposeItem>
+<DMGeolAssets.Catalogues.PurposeItem TID="4"><IsSuperItem>true</IsSuperItem><IsUseable>true</IsUseable><Name>geotechnics</Name></DMGeolAssets.Catalogues.PurposeItem>
+<DMGeolAssets.Catalogues.PurposeItem TID="5"><IsSuperItem>false</IsSuperItem><IsUseable>true</IsUseable><Parent REF="4"></Parent><Name>geotechnics child 1</Name></DMGeolAssets.Catalogues.PurposeItem>
+<DMGeolAssets.Catalogues.PurposeItem TID="6"><IsSuperItem>false</IsSuperItem><IsUseable>true</IsUseable><Parent REF="4"></Parent><Name>geotechnics child 2</Name></DMGeolAssets.Catalogues.PurposeItem>
+<DMGeolAssets.Catalogues.PurposeItem TID="7"><IsSuperItem>true</IsSuperItem><IsUseable>false</IsUseable><Name>geophysics</Name></DMGeolAssets.Catalogues.PurposeItem>
+<DMGeolAssets.Catalogues.PurposeItem TID="8"><IsSuperItem>false</IsSuperItem><IsUseable>true</IsUseable><Parent REF="7"></Parent><Name>seismics</Name></DMGeolAssets.Catalogues.PurposeItem>
+<DMGeolAssets.Catalogues.PurposeItem TID="9"><IsSuperItem>false</IsSuperItem><IsUseable>true</IsUseable><Parent REF="7"></Parent><Name>gravimetry</Name></DMGeolAssets.Catalogues.PurposeItem>
+</DMGeolAssets.Catalogues>
+<DMGeolAssets.CoreGeolAsset BID="DMGeolAssets.CoreGeolAsset">
+</DMGeolAssets.CoreGeolAsset>
+</DATASECTION>
+</TRANSFER>

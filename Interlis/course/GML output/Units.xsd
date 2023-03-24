@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://www.interlis.ch/INTERLIS2.3/GML32/Units" targetNamespace="http://www.interlis.ch/INTERLIS2.3/GML32/Units" elementFormDefault="qualified" attributeFormDefault="unqualified"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:INTERLIS="http://www.interlis.ch/INTERLIS2.3/GML32/INTERLIS"
+  xmlns:ili2c="http://www.interlis.ch/ili2c"
+  >
+<xsd:annotation>
+  <xsd:appinfo source="http://www.interlis.ch/ili2c/ili2cversion">5.2.3-SNAPSHOT-9c8cd9464dcc6e1c292a63014243a703f8aac33e</xsd:appinfo>
+  <xsd:appinfo source="http://www.interlis.ch/ili2c">
+    <ili2c:model>Units</ili2c:model>
+    <ili2c:modelVersion>2012-02-20</ili2c:modelVersion>
+    <ili2c:modelAt>http://www.interlis.ch/models</ili2c:modelAt>
+  </xsd:appinfo>
+</xsd:annotation>
+<xsd:import namespace="http://www.opengis.net/gml/3.2"/>
+<xsd:import namespace="http://www.interlis.ch/INTERLIS2.3/GML32/INTERLIS"/>
+</xsd:schema>

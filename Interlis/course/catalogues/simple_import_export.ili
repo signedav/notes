@@ -1,0 +1,13 @@
+INTERLIS 2.3;
+MODEL DMGeolAssets (en) AT "mailto:localhost" VERSION "2021-07-20" =
+  
+  TOPIC CoreGeolAsset =
+  
+    CLASS Asset =
+      AnyOtherMeaningfulAttribute : TEXT;
+      AndSoOn : TEXT;
+    END Asset;
+
+  END CoreGeolAsset;
+
+END DMGeolAssets.

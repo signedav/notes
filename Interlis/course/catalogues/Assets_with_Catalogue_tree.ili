@@ -1,0 +1,67 @@
+/* Dieses Modell hat zwei Tree Catalogue Items. Das ist cool. Verwirrend, wenn man es importiert ist aber, dass ein ColorItem zwei FKs hat (eines auf ColorItem (da Rekursiv) und ein anderes auf PurposeItem.*/
+INTERLIS 2.3;
+MODEL DMGeolAssets (en) AT "mailto:localhost" VERSION "2021-07-20" =
+IMPORTS CatalogueObjectTrees_V1;
+
+  TOPIC Catalogues =
+    OID AS INTERLIS.UUIDOID;
+ 
+    CLASS PurposeItem EXTENDS CatalogueObjectTrees_V1.Catalogues.Item =
+      Name : MANDATORY TEXT;
+      Description : TEXT;
+    END PurposeItem;
+    
+    STRUCTURE PurposeRef EXTENDS CatalogueObjectTrees_V1.Catalogues.CatalogueReference =
+      Reference (EXTENDED) : REFERENCE TO (EXTERNAL) PurposeItem;
+    END PurposeRef;
+    
+    CLASS ColorItem EXTENDS CatalogueObjectTrees_V1.Catalogues.Item =
+      Name : MANDATORY TEXT;
+      Description : TEXT;
+    END ColorItem;
+    
+    STRUCTURE ColorRef EXTENDS CatalogueObjectTrees_V1.Catalogues.CatalogueReference =
+      Reference (EXTENDED) : REFERENCE TO (EXTERNAL) ColorItem;
+    END ColorRef;
+  END Catalogues;
+
+  TOPIC CoreGeolAsset =
+  DEPENDS ON DMGeolAssets.Catalogues; 
+  
+    CLASS Asset =
+      Purpose : MANDATORY DMGeolAssets.Catalogues.PurposeRef;
+      Color : MANDATORY DMGeolAssets.Catalogues.ColorRef;
+      AnyOtherMeaningfulAttribute : TEXT;
+      AndSoOn : TEXT;
+    END Asset;
+
+  END CoreGeolAsset;
+
+END DMGeolAssets.
+
+/* Hier versuche ich das verhalten einer rekursiven Klasse, die abgeleitet wird zu rekonstruieren.*/
+MODEL DMGeolAssets_MultirecursionDemo (en) AT "mailto:localhost" VERSION "2021-07-20" =
+
+  TOPIC RecursionDemo =
+    OID AS INTERLIS.UUIDOID;
+
+    CLASS AbstractItem (ABSTRACT) = 
+      Name:  TEXT;
+    END AbstractItem;
+
+    ASSOCIATION Recursion =
+      Parent -<#> AbstractItem;
+      Child -- AbstractItem;
+    END Recursion;
+
+    CLASS Derived1Item EXTENDS AbstractItem = 
+      Decription:  TEXT;
+    END Derived1Item;
+    CLASS Derived2Item EXTENDS AbstractItem = 
+      Issue:  TEXT;
+    END Derived2Item;
+    CLASS Derived3Item EXTENDS AbstractItem = 
+      Something:  TEXT;
+    END Derived3Item;
+  END RecursionDemo;
+END DMGeolAssets_MultirecursionDemo.

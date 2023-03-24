@@ -1,0 +1,29 @@
+INTERLIS 2.3;
+MODEL DMGeolAssets (en) AT "mailto:localhost" VERSION "2021-07-20" =
+IMPORTS CatalogueObjects_V1;
+
+  TOPIC Catalogues =
+ 
+    CLASS PurposeItem EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      Name : MANDATORY TEXT;
+      Description : TEXT;
+    END PurposeItem;
+    
+    STRUCTURE PurposeRef EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+      Reference (EXTENDED) : REFERENCE TO (EXTERNAL) PurposeItem;
+      Reason : TEXT;
+    END PurposeRef;
+  END Catalogues;
+  
+  TOPIC CoreGeolAsset =
+  DEPENDS ON DMGeolAssets.Catalogues; 
+  
+    CLASS Asset =
+      Purpose : MANDATORY DMGeolAssets.Catalogues.PurposeRef;
+      AnyOtherMeaningfulAttribute : TEXT;
+      AndSoOn : TEXT;
+    END Asset;
+
+  END CoreGeolAsset;
+
+END DMGeolAssets.

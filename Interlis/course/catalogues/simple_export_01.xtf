@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><TRANSFER xmlns="http://www.interlis.ch/INTERLIS2.3">
+<HEADERSECTION SENDER="ili2pg-4.5.0-fc023c8d2d8cd44d792927e45dc80c1ad973f095" VERSION="2.3"><MODELS><MODEL NAME="DMGeolAssets" VERSION="2021-07-20" URI="mailto:localhost"></MODEL></MODELS></HEADERSECTION>
+<DATASECTION>
+<DMGeolAssets.CoreGeolAsset BID="DMGeolAssets.CoreGeolAsset">
+<DMGeolAssets.CoreGeolAsset.Asset TID="1"><AndSoOn>a</AndSoOn></DMGeolAssets.CoreGeolAsset.Asset>
+<DMGeolAssets.CoreGeolAsset.Asset TID="2"><AndSoOn>b</AndSoOn></DMGeolAssets.CoreGeolAsset.Asset>
+<DMGeolAssets.CoreGeolAsset.Asset TID="3"><AndSoOn>c</AndSoOn></DMGeolAssets.CoreGeolAsset.Asset>
+<DMGeolAssets.CoreGeolAsset.Asset TID="4"><AndSoOn>d</AndSoOn></DMGeolAssets.CoreGeolAsset.Asset>
+</DMGeolAssets.CoreGeolAsset>
+</DATASECTION>
+</TRANSFER>

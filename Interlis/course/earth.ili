@@ -1,0 +1,31 @@
+INTERLIS 2.3;
+MODEL Earth AT "mailto:david@opengis.ch" VERSION "2021-06-22" =
+    IMPORTS UNQUALIFIED Units;
+    DOMAIN
+        AtmosphericPressureType = 00.00 .. 90000.00 [atm];
+
+    STRUCTURE AtmosphericPressure = 
+        Value: AtmosphericPressureType;
+    END AtmosphericPressure;
+
+    STRUCTURE Address = 
+        StreetName: TEXT*32;
+        StreetNumber: TEXT*8;
+    END Address;
+
+    TOPIC Water =
+        CLASS WaterStructure = 
+            Address: BAG {1..*} OF Address;
+        END WaterStructure;
+    END Water;
+
+    TOPIC LocalWater EXTENDS Water=
+        CLASS WaterStructure (EXTENDED)= 
+            Text: TEXT*23;
+        END WaterStructure;
+
+        CLASS LocalWaterStructure EXTENDS WaterStructure = 
+
+        END LocalWaterStructure;
+    END LocalWater;
+END Earth.

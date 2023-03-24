@@ -1,0 +1,29 @@
+INTERLIS 2.3;
+MODEL MyModel (en) AT "mailto:localhost" VERSION "2021-07-20" =
+IMPORTS CatalogueObjects_V1;
+
+  TOPIC Catalogues =
+  
+    CLASS Cat42 EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      TypeName : MANDATORY TEXT;
+      TypeCode : TEXT*2;
+    END Cat42;
+    
+    STRUCTURE Cat42Ref EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+      Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Cat42;
+    END Cat42Ref;
+  
+  END Catalogues;
+  
+  TOPIC MyDataTopic =
+  DEPENDS ON MyModel.Catalogues; 
+  
+    CLASS MyClass =
+      Type : MANDATORY MyModel.Catalogues.Cat42Ref;
+      AnyOtherMeaningfulAttribute : TEXT;
+      AndSoOn : TEXT;
+    END MyClass;
+  
+  END MyDataTopic;
+
+END MyModel.
