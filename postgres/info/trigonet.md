@@ -1,4 +1,5 @@
 ## To Do:
+- [ ] Check nochmals slides
 - [ ] Script um DB / Schema / EXTENSION/Tabelle erstellen
 - [ ] PgAdmin installieren
 - [ ] Script um Benutzer zu erstellen
@@ -6,6 +7,7 @@
 - [ ] Installiere PG Modeller
 - [ ] Geometriechecks: PostGIS Script vorbereiten
 - [ ] Geometriechecks: QGIS Möglichkeiten auschecken
+- [ ] Editor Tracking tools..
 
 ## Aufbau von Produktionsdatenbanken / Schemas
 
