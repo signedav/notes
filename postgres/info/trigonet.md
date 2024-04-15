@@ -1,12 +1,23 @@
+## To Do:
+- [ ] Script um DB / Schema / EXTENSION/Tabelle erstellen
+- [ ] PgAdmin installieren
+- [ ] Script um Benutzer zu erstellen
+- [ ] PostGIS2gpkg Test (evtl. ihr Use Case)
+- [ ] Installiere PG Modeller
+- [ ] Geometriechecks: PostGIS Script vorbereiten
+- [ ] Geometriechecks: QGIS Möglichkeiten auschecken
+
 ## Aufbau von Produktionsdatenbanken / Schemas
 
 ### Wie aufbauen?
 
-- [ ] PSQL installieren
-- [ ] PgAdmin installieren
-- [ ] DBeaver installieren (Zeuch erstellen)
-- PostgreSQL Studio (web-basiert)
-- TeamPostgreSQL (web-basiert)
+- PSQL (Statements)
+- PGAdmin
+- DBeaver
+- PostgreSQL Studio (web-basiert) kenn ich nicht
+- TeamPostgreSQL (web-basiert) kenn ich nicht
+
+> Demo: Wie bauen in PSQL (gemäss Script), PGAdmin, DBeaver
 
 ### Wie aufteilen?
 
@@ -45,7 +56,6 @@ Who knows? Jeder macht's anderst...
 
 - INTERLIS gibt es den UML Editor
 - Für Postgres gibt es den PGModeller (auch reverse modeller)
-- [ ] Installiere PG Modeller
 
 #### Doku-WebSites und Libraries
 
@@ -54,22 +64,21 @@ Wofür?
 ## Datenbankobjekte
 
 ### ESRI Zeuch
-
-Mein bescheidens ArcGIS Wissen sagt mir, dass FeatureClasses einfach Tabellen sind mit Geometrien.
-
-Und Feature Datasets separieren Daten. Ob dies in PostgreSQL mit Schemas gelöst wird oder ähnlich wie bei ili2db mit Baskets, weiss ich nicht.
-
-Relationships werden normalerweise in PostgreSQL mit FKs und Join-Tabellen gelöst. In INTERLIS mit ASSOCIATIONS modelliert. In QGIS werden dann (mit oder ohne Model Baker) die Relations erstellt.
-
 - Tabellen
 - FeatureDatasets
 - FeatureClasses
 - Relationshipclasses
 - Domains
 
+FeatureClasses einfach Tabellen sind mit Geometrien.
+
+Und Feature Datasets ähnlich Schemas separieren Daten und Struktur in File-Geodatabase.
+
+Relationships werden normalerweise in PostgreSQL mit FKs und Join-Tabellen gelöst. In INTERLIS mit ASSOCIATIONS modelliert. In QGIS werden dann (mit oder ohne Model Baker) die Relations erstellt.
+
 ### Rasterdaten
 
-Wurde vermutlich mit ArcGIS auch in DB gespeichert. Nun in PostgreSQL kann man das machen, ist aber u.U. nicht so preformant.
+Wurde vermutlich mit ArcGIS auch in DB gespeichert. Nun in PostgreSQL kann man das machen, ist aber u.U. nicht so preformant. Habe Info in Slides dazu...
 
 Wir haben gute Erfahrungen gemacht mit Cloud Optimized Geo Tiff (COG), die kann man auf ein Netzlaufwerk tun oder auf einen HTTP Server).
 
@@ -104,16 +113,22 @@ Ausserdem gibt es auch eine Extension: https://github.com/pgaudit/pgaudit
 ## Checktools
 
 - bspw. Fläche geschlossen
-- [ ] PostGIS checks
-- [ ] QGIS
+- PostGIS checks
+- QGIS Möglichkeiten
 
 ## PostGIS2gpkg und umgekehrt
 
 ### was gibt es da
+ogr2ogr
 
 ### wie wird mit Beziehungen usw. umgegangen?
+vermutlich gehen die kaputt...
 
 ## Aufbau (Verständnis) von User und Rollen (Server und Datenbanken)
+
+### About owner
+> Ordinarily, only the object's owner (or a superuser) can grant or revoke privileges on an object. However, it is possible to grant a privilege “with grant option”, which gives the recipient the right to grant it in turn to others.
+
 
 ### best practice
  
@@ -127,12 +142,11 @@ https://github.com/QGEP/datamodel/blob/master/12_0_roles.sql
 - Oder QGIS Authentification File (kann auch mit Services kombiniert werden)
 
 ### Umgang mit User und PW?
-
-- [ ] was ist gemeint? Mit den Daten oder geht es um die Rollen?
+- was ist gemeint? Mit den Daten oder geht es um die Rollen?
 
 ### Unterschiedliche Verbindungspfade (Cnames)
 
-- [ ] was ist gemeint? Ob die im hba.conf zugelassen sind?
+- was ist gemeint? Ob die im hba.conf zugelassen sind?
 
 ## Wartungstasks
 
