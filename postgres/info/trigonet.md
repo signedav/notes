@@ -109,6 +109,8 @@ https://wiki.postgresql.org/wiki/Audit_trigger_91plus
 
 Ausserdem gibt es auch eine Extension: https://github.com/pgaudit/pgaudit
 
+oder auch pg_stat_statements
+
 - [ ] check it out
 
 ### Archiv
