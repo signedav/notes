@@ -10,6 +10,97 @@
 - [ ] Geometriechecks: QGIS Möglichkeiten auschecken
 - [ ] Editor Tracking tools..
 
+### Was sie so nutzen
+
+MSSQL für Produktion und für Publikation
+
+ArcSDE Dings 
+
+ArcMap oder GEONIS
+
+FME
+
+Bauen auch mit ArcMap Datenmodelle
+
+Oder auch INTERLIS
+
+Auch machen sie an bestehenden Datenbanken updates. Das können sie mit GeoCom XML Script wo man das ganze Modell bauen kann. Oder auch mit Anpassungen über ArcGIS. Das kann man soweit nicht in QGIS...
+
+### Was sie wollen
+
+MSSQL sollen nicht ersetzt, sondern ergänzt werden mit PostgreSQL mit Fokus auf Produktion.
+
+Mit PostgreSQL möglichst auf Windows bleiben.
+
+Maintanance und Monitoring + Backup Konzept
+
+Mit Knopfdruck für Maintanance -> Gibt es Oberfläche von SQL Server
+
+### Aufbau
+
+Mehrere SQL Server Instanzen. Mehrere Windows Services.
+
+In Instanzen aufgeteilt deshalb, damit man gewisse Ressourcen zuweisen könnte RAM und Cores.
+
+Instanzen haben Logins oder AD Join.
+
+Datenbanken haben Benutzer / Rollen.
+
+Spiegeln von einer Instanz auf die Andere und die SIDs (Logins) sind überall gleich.
+
+Ein Operat ist meistens Thema (zBs. Wasser) + Gemeinde (zBs. Obwalden).
+
+Pro Operat eine eigene Datenbank - Mehrere 100 Datenbanken. Auch super mit Berechtigungen.
+
+Sie haben oft die gleichen Benutzer und die selben Modelle / Strukturen auf den DBs, weshalb sie gleiche Scripts nützen können.
+
+Meistens ein bis drei Schemas pro DB.
+
+Sie können auch einfach ein Dump wiedereinspielen, wenn für einzelne Operate so...
+
+### Weitere Info über MSSQL - kann das PG auch?
+
+Instanzen haben Logins oder AD Join.
+
+MS SQL kann DB übergreiffend sein... SELECT * FROM dbname.schemaname.tabellenname Nur innerhalb derselben Instanz Möglich
+
+
+### Was sie noch wissen möchten
+
+- Maintanance Backup Monitoring
+
+- Connectionfiles pg_config + auf Server oder Lokal + Authentification - kann man auch im QGIS so ähnlich?
+
+- In ArcMap kann man verchlüssletes Passwort in Projekt speichern - was kann QGIS?
+
+- Kann das PG auch (Weitere Info über MSSQL)
+
+- QGIS Layerzugriff MSSQL / PostgreSQL was sind die unterschiede - vorzeigen
+
+- INTERLIS Baskets und Datasets kurz zeigen...
+
+- DB Mutationen mit QGIS / INTERLIS
+
+- Durch PG Admin klicken und alles erklären (in struktur links)
+
+- PG Installation: wie baut man best practice die db auf (von source builden) und Postgis und ersetzen.
+
+- Scripts um DB zu erstellen etc...
+
+- Weitere Nützliche Extensions ausser POSTGIS
+
+- pg2gpkg und zurück (SDE Datenbanken werden regelmässig in File-GeoDatabases konvertiert um weiterzugeben) - was passiert mit Beziehungen? Kann das GPKG nicht?
+
+- Toolboxen wie Shapely
+
+- Auf ESRI kann man eine Version machen. Darauf arbeiten und dann wieder verwerfen. Also eine temporäre Kopie um darauf zu arbeiten und dann in den Dataset einspeisen (Snapshots evt.) - gibt es etwas ähnliches
+
+- Archiv - eher wie Historisierung / zeigen evtl. Triggerlösung - evtl. wieQField
+
+- EditorTracking (Username+Zeitstempfel)
+
+
+
 ## Aufbau von Produktionsdatenbanken / Schemas
 
 ### Wie aufbauen?
