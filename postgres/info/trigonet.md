@@ -1,6 +1,7 @@
 ## To Do:
 - [ ] Check nochmals slides
-- [ ] Script um DB / Schema / EXTENSION/Tabelle erstellen
+- [ ] Script um DB / Schema / EXTENSION / Tabelle erstellen
+- [ ] Gute links für das erstellen
 - [ ] PgAdmin installieren
 - [ ] Script um Benutzer zu erstellen
 - [ ] PostGIS2gpkg Test (evtl. ihr Use Case)
