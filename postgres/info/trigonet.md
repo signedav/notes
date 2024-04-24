@@ -31,7 +31,7 @@ Gut für:
 - Versionen
 - Allocate Ressources: Glaube schon möglich, aber übersteigt etwas mein Know-How - Sicher möglich bei Containerisierungen
 - Logins (kann man pro Instanzes festlegen) Betr. AD weiss ich, dass es mit LDAP genutzt wird, aber übersteigt etwas mein Know-How
-- Clusterübergreiffende SELECTS (Views) - wie gesagt sowieso möglich mit QGIS. DBübergreiffend möglich mit `dblink` EXTENSION siehe https://stackoverflow.com/questions/42447131/postgres-run-same-query-on-all-databases-same-schemas/72562629#72562629 - nicht sicher ob auch clusterübergreiffend...
+- Clusterübergreiffende SELECTS (Views) - wie gesagt sowieso möglich mit QGIS. DBübergreiffend möglich mit `dblink` EXTENSION siehe https://stackoverflow.com/questions/42447131/postgres-run-same-query-on-all-databases-same-schemas/72562629#72562629 - nicht sicher ob auch clusterübergreiffend... Auch Foreign Tables (in PGAdmin sichtbar) könnte eine Lösung sein, kenn ich aber nicht...
   
 #### Installation
 
