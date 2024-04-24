@@ -45,6 +45,7 @@ Weiter kann man dann Connection-Masken konfigurieren https://www.postgresql.org/
 
 ##### PostGIS
 Letzter Release PostGIS 3.4.1 von postgis.net
+
 ```
 CREATE EXTENSION postgis;
 -- enabling raster support
@@ -62,11 +63,11 @@ CREATE EXTENSION postgis_topology;
     CREATE EXTENSION uuid-ossp;
     CREATE EXTENSION hstore;
     ```
-- DB Aufbau
-- DB Backup
+- DB Aufbau / DB Backup
 - Alternative (DBeaver)
   
 #### PSQL 
+
 https://www.postgresql.org/docs/current/app-psql.html
 
 ##### DB und Schema erstellen und EXTENSIONS aktivieren
@@ -127,10 +128,21 @@ COST 100;
 ```
 
 ### Möglichkeiten mit QGIS
-#### Authentification
+
 #### Editierung der Datenbank in QGIS
-- DB Manager
+
+- Connection hinzufügen
 - DB Browser
+- DB Manager
+
+#### Authentification
+##### Service File
+```
+SHOW config_file;
+```
+- [ ] Teste das aus inkl. Verbindung auf Docker (server)
+
+##### Authentifications
 
 #### PG Modeller
 Demo...
