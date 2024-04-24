@@ -60,26 +60,61 @@ CREATE EXTENSION postgis_topology;
     CREATE EXTENSION hstore;
     ```
 - DB Aufbau
+- DB Backup
 - Alternative (DBeaver)
   
 #### PSQL 
-- DB Aufbau
+https://www.postgresql.org/docs/current/app-psql.html
+
+##### DB und Schema erstellen und EXTENSIONS aktivieren
 
 ```none
-$ psql -Upostgres -hlocalhost -gis
+$psql -hlocalhost -p5432 -dpostgres -Upostgres 
 
-postgres=# CREATE DATABASE databasename;
+postgres=# CREATE DATABASE gis;
  
-postgres=# \connect databasename;
+postgres=# \connect gis;
+
+postgres=# CREATE SCHEMA kbs;
+```
+etc.
+
+##### Rollen und User erstellen
+```
+CREATE ROLE dave WITH CREATEDB CREATEROLE LOGIN PASSWORD 'Quentin';
+```
+Siehe auch: https://www.postgresql.org/docs/current/sql-createrole.html
+
+`CREATE USER` ist `CREATE ROLE`, das `LOGIN` impliziert...
+
+Man kann dann Berechtigungen vergeben:
+```
+GRANT INSERT ON tabelle TO dave;
+GRANT INSERT ON SCHEMA kbs TO dave;
+GRANT INSERT ON DATABASE gis TO dave;
 ```
 
-- Rollen
-- Sonstige Scripts (Beispiele)
+Oder Gruppen:
+```
+CREATE GROUP opengisch-ninja WITH USER dave;
+```
+```
+GRANT INSERT ON tabelle TO GROUP opengisch-ninja;
+```
+etc.
+
+#### PL/pgsql
+
+Kann man cooles Zeug machen:
+https://github.com/QGEP/datamodel/blob/master/12_0_roles.sql
+Damit kann man auch die Trigger funktionen machen...
+
 ### Möglichkeiten mit QGIS
 #### Authentification
 #### Editierung der Datenbank in QGIS
 - DB Manager
 - DB Browser
+
 #### PG Modeller
 ### Montioring und Wartung
 #### Monitoring Tool
@@ -100,9 +135,17 @@ oder auch `pg_stat_statements`
 - pg2gpkg und zurück (SDE Datenbanken werden regelmässig in File-GeoDatabases konvertiert um weiterzugeben) - was passiert mit Beziehungen? Kann das GPKG nicht?
 
 #### Historisierungs Lösung
+Könnte man auch mit Trigger-Functions bauen...
+
+#### Versionisierung
+Nicht direkt in PosgreSQL oder QGIS aber mit anderen Lösungen:
+https://kartproject.org/
+
 ### Sonstiges
+
 #### INTERLIS Baskets
 - Demo vorzeigen
+
 
 ### Was sie so nutzen
 
