@@ -2,13 +2,107 @@
 - [ ] Check nochmals slides
 - [ ] Script um DB / Schema / EXTENSION / Tabelle erstellen
 - [ ] Gute links für das erstellen
-- [ ] PgAdmin installieren
 - [ ] Script um Benutzer zu erstellen
 - [ ] PostGIS2gpkg Test (evtl. ihr Use Case)
 - [ ] Installiere PG Modeller
 - [ ] Geometriechecks: PostGIS Script vorbereiten
 - [ ] Geometriechecks: QGIS Möglichkeiten auschecken
 - [ ] Editor Tracking tools..
+
+## Workshop 26. April
+### PostgreSQL Allgemein
+#### Servers / Instances
+
+**Instances** sind **Services** sind **Server** und heissen **Clusters**. Was so ein **Cluster** beinhaltet (zBs. auch Logins), sehen wir dann im **PgAdmin**. 
+
+Das Wort **Cluster** ist ein bisschen unglücklich, da man denken könnte, dass die Last über mehrere "physische" Server aufgeteilt wird. Das ist aber etwas anderes (kann schon bewerkstelligt werden mit Container-Lösungen wie Docker oder Kubernetes.
+
+```
+initdb -D /usr/local/pgsql/data
+psql -U Postgres -p 5436 -h localhost
+CREATE DATABASE mynewdb;
+pg_ctlcluster 12 main start
+```
+
+Gibt sicher auch **Managing Tools**, aber müsste ich selbst googlen.
+
+Gut für:
+- Isolation
+- Versionen
+- Allocate Ressources: Glaube schon möglich, aber übersteigt etwas mein Know-How - Sicher möglich bei Containerisierungen
+- Logins (kann man pro Instanzes festlegen) Betr. AD weiss ich, dass es mit LDAP genutzt wird, aber übersteigt etwas mein Know-How
+- Clusterübergreiffende SELECTS (Views) - wie gesagt sowieso möglich mit QGIS. DBübergreiffend möglich mit `dblink` EXTENSION siehe https://stackoverflow.com/questions/42447131/postgres-run-same-query-on-all-databases-same-schemas/72562629#72562629 - nicht sicher ob auch clusterübergreiffend...
+  
+#### Installation
+- *Weshalb möchtet ihr von Source builden?*
+- Version 15 oder 16: https://www.postgresql.org/docs/release/
+- Ich würde offizielle Version installieren
+
+Weiter kann man dann Connection-Masken konfigurieren https://www.postgresql.org/docs/current/auth-pg-hba-conf.html
+
+##### PostGIS
+Letzter Release PostGIS 3.4.1 von postgis.net
+```
+CREATE EXTENSION postgis;
+-- enabling raster support
+CREATE EXTENSION postgis_raster;
+-- enabling advanced 3d support
+CREATE EXTENSION postgis_sfcgal;
+-- enabling SQL/MM Net Topology
+CREATE EXTENSION postgis_topology;
+```
+
+#### PG Admin
+- Durchgehen
+  - Nützliche Extensions
+    ```
+    CREATE EXTENSION uuid-ossp;
+    CREATE EXTENSION hstore;
+    ```
+- DB Aufbau
+- Alternative (DBeaver)
+  
+#### PSQL 
+- DB Aufbau
+
+```none
+$ psql -Upostgres -hlocalhost -gis
+
+postgres=# CREATE DATABASE databasename;
+ 
+postgres=# \connect databasename;
+```
+
+- Rollen
+- Sonstige Scripts (Beispiele)
+### Möglichkeiten mit QGIS
+#### Authentification
+#### Editierung der Datenbank in QGIS
+- DB Manager
+- DB Browser
+#### PG Modeller
+### Montioring und Wartung
+#### Monitoring Tool
+#### Editor Tracking Lösung
+Es gibt die normalen Logging-Funktionen, wie:
+
+```
+log_statement = all
+```
+
+Grundsätzlich kann das mit Triggers bewerkstelligt werden. Ist also "zu bauen", gibt aber vorlagen: 
+https://wiki.postgresql.org/wiki/Audit_trigger_91plus
+
+Ausserdem gibt es auch eine Extension: https://github.com/pgaudit/pgaudit
+
+oder auch `pg_stat_statements`
+### PG2GPKG and Back
+- pg2gpkg und zurück (SDE Datenbanken werden regelmässig in File-GeoDatabases konvertiert um weiterzugeben) - was passiert mit Beziehungen? Kann das GPKG nicht?
+
+#### Historisierungs Lösung
+### Sonstiges
+#### INTERLIS Baskets
+- Demo vorzeigen
 
 ### Was sie so nutzen
 
@@ -91,14 +185,11 @@ MS SQL kann DB übergreiffend sein... SELECT * FROM dbname.schemaname.tabellenna
 
 - pg2gpkg und zurück (SDE Datenbanken werden regelmässig in File-GeoDatabases konvertiert um weiterzugeben) - was passiert mit Beziehungen? Kann das GPKG nicht?
 
-- Toolboxen wie Shapely
-
 - Auf ESRI kann man eine Version machen. Darauf arbeiten und dann wieder verwerfen. Also eine temporäre Kopie um darauf zu arbeiten und dann in den Dataset einspeisen (Snapshots evt.) - gibt es etwas ähnliches
 
 - Archiv - eher wie Historisierung / zeigen evtl. Triggerlösung - evtl. wieQField
 
 - EditorTracking (Username+Zeitstempfel)
-
 
 
 ## Aufbau von Produktionsdatenbanken / Schemas
@@ -192,17 +283,12 @@ Es gibt die normalen Logging-Funktionen, wie:
 log_statement = all
 ```
 
-- [ ] trackt das auch User? Anyway, ist die Suche darin natürlich nicht so angenehm...
-- [ ] wie macht man das?
-
 Grundsätzlich kann das mit Triggers bewerkstelligt werden. Ist also "zu bauen", gibt aber vorlagen: 
 https://wiki.postgresql.org/wiki/Audit_trigger_91plus
 
 Ausserdem gibt es auch eine Extension: https://github.com/pgaudit/pgaudit
 
-oder auch pg_stat_statements
-
-- [ ] check it out
+oder auch `pg_stat_statements`
 
 ### Archiv
 
