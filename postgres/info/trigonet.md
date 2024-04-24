@@ -194,6 +194,27 @@ https://kartproject.org/
 
 #### INTERLIS Baskets
 - Demo vorzeigen
+- [ ] Teste das:
+
+```
+INTERLIS 2.3;
+
+MODEL SuperSimple (en) 
+AT "http://modelbaker.ch"
+VERSION "2020-06-22" =
+  
+    IMPORTS GeometryCHLV95_V1;
+
+    TOPIC Spots =
+      CLASS POI =
+        Name: TEXT;
+        Point: GeometryCHLV95_V1.Coord2;
+      END POI;
+    END Spots;
+
+END SuperSimple.
+```
+
 
 #### Raster in PG?
 
