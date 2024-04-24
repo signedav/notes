@@ -34,6 +34,9 @@ Gut für:
 - Clusterübergreiffende SELECTS (Views) - wie gesagt sowieso möglich mit QGIS. DBübergreiffend möglich mit `dblink` EXTENSION siehe https://stackoverflow.com/questions/42447131/postgres-run-same-query-on-all-databases-same-schemas/72562629#72562629 - nicht sicher ob auch clusterübergreiffend...
   
 #### Installation
+
+Siehe das hier: https://github.com/opengisch/postgresql-admin-course/blob/master/installation.md
+
 - *Weshalb möchtet ihr von Source builden?*
 - Version 15 oder 16: https://www.postgresql.org/docs/release/
 - Ich würde offizielle Version installieren
@@ -116,8 +119,25 @@ Damit kann man auch die Trigger funktionen machen...
 - DB Browser
 
 #### PG Modeller
+Demo...
+
+#### Geometriechecks
+- [ ] To do...
+
 ### Montioring und Wartung
+
+#### Maintanance und Backups
+
+Siehe: https://github.com/opengisch/postgresql-admin-course/blob/master/maintenance.md
+
+pg_dump für Schema mit `--schema` für Tabelle mit `--table`.
+
+Aktivieren von autovacuum etc. so: https://github.com/opengisch/postgresql-admin-course/blob/master/konfiguration.md
+
 #### Monitoring Tool
+
+- [ ] To do...
+
 #### Editor Tracking Lösung
 Es gibt die normalen Logging-Funktionen, wie:
 
@@ -131,14 +151,17 @@ https://wiki.postgresql.org/wiki/Audit_trigger_91plus
 Ausserdem gibt es auch eine Extension: https://github.com/pgaudit/pgaudit
 
 oder auch `pg_stat_statements`
+
 ### PG2GPKG and Back
-- pg2gpkg und zurück (SDE Datenbanken werden regelmässig in File-GeoDatabases konvertiert um weiterzugeben) - was passiert mit Beziehungen? Kann das GPKG nicht?
+
+- [ ] pg2gpkg und zurück (SDE Datenbanken werden regelmässig in File-GeoDatabases konvertiert um weiterzugeben) - was passiert mit Beziehungen? Kann das GPKG nicht?
 
 #### Historisierungs Lösung
 Könnte man auch mit Trigger-Functions bauen...
 
 #### Versionisierung
 Nicht direkt in PosgreSQL oder QGIS aber mit anderen Lösungen:
+
 https://kartproject.org/
 
 ### Sonstiges
@@ -146,6 +169,11 @@ https://kartproject.org/
 #### INTERLIS Baskets
 - Demo vorzeigen
 
+#### Raster in PG?
+
+Nun in PostgreSQL kann man das machen, ist aber u.U. nicht so preformant. Habe Info in Slides dazu...
+
+Wir haben gute Erfahrungen gemacht mit Cloud Optimized Geo Tiff (COG), die kann man auf ein Netzlaufwerk tun oder auf einen HTTP Server).
 
 ### Was sie so nutzen
 
