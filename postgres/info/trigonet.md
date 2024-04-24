@@ -1,13 +1,7 @@
 ## To Do:
-- [ ] Check nochmals slides
-- [ ] Script um DB / Schema / EXTENSION / Tabelle erstellen
-- [ ] Gute links für das erstellen
-- [ ] Script um Benutzer zu erstellen
-- [ ] PostGIS2gpkg Test (evtl. ihr Use Case)
-- [ ] Installiere PG Modeller
 - [ ] Geometriechecks: PostGIS Script vorbereiten
 - [ ] Geometriechecks: QGIS Möglichkeiten auschecken
-- [ ] Editor Tracking tools..
+- [ ] Service Conf File (wenn nicht auf Server)
 
 ## Workshop 26. April
 ### PostgreSQL Allgemein
@@ -179,8 +173,18 @@ Ausserdem gibt es auch eine Extension: https://github.com/pgaudit/pgaudit
 oder auch `pg_stat_statements`
 
 ### PG2GPKG and Back
+pg2gpkg und zurück (SDE Datenbanken werden regelmässig in File-GeoDatabases konvertiert um weiterzugeben) - was passiert mit Beziehungen? Kann das GPKG nicht?
 
-- [ ] pg2gpkg und zurück (SDE Datenbanken werden regelmässig in File-GeoDatabases konvertiert um weiterzugeben) - was passiert mit Beziehungen? Kann das GPKG nicht?
+#### ogr2ogr
+... macht Relations kaputt:
+```
+ogr2ogr -f "GPKG" simple.gpkg PG:"host=localhost port=54322 user=docker dbname=gis password=docker"
+```
+
+#### QGIS Offline Editing Plugin
+- Macht es mit C++
+- Demo...
+- The way back?
 
 #### Historisierungs Lösung
 Könnte man auch mit Trigger-Functions bauen...
@@ -194,7 +198,6 @@ https://kartproject.org/
 
 #### INTERLIS Baskets
 - Demo vorzeigen
-- [ ] Teste das:
 
 ```
 INTERLIS 2.3;
@@ -204,17 +207,33 @@ AT "http://modelbaker.ch"
 VERSION "2020-06-22" =
   
     IMPORTS GeometryCHLV95_V1;
+  
+    DOMAIN
+      Surface = SURFACE WITH (STRAIGHTS) VERTEX GeometryCHLV95_V1.Coord2 WITHOUT OVERLAPS > 0.005;
 
-    TOPIC Spots =
-      CLASS POI =
-        Name: TEXT;
-        Point: GeometryCHLV95_V1.Coord2;
-      END POI;
-    END Spots;
+      TOPIC Spots =
+        CLASS POI =
+            Name: TEXT;
+            Point: GeometryCHLV95_V1.Coord2;
+        END POI;
+
+        CLASS AOI =
+            Name: TEXT;
+            Number: 0 .. 100;
+            Surface: Surface;        
+            SET CONSTRAINT WHERE DEFINED (Name) :
+                DEFINED (Number);
+        END AOI;
+
+        ASSOCIATION POI_AOI =
+            AOI -- {0..*} AOI;
+            POI -- {0..*} POI;
+        END POI_AOI;
+
+      END Spots;
 
 END SuperSimple.
 ```
-
 
 #### Raster in PG?
 
