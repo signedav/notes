@@ -110,7 +110,21 @@ etc.
 
 Kann man cooles Zeug machen:
 https://github.com/QGEP/datamodel/blob/master/12_0_roles.sql
-Damit kann man auch die Trigger funktionen machen...
+Damit kann man auch die Trigger funktionen machen:
+```
+CREATE OR REPLACE FUNCTION
+test.insert_update_test_trigger_function()
+RETURNS trigger AS
+$BODY$
+  BEGIN
+    NEW.flaeche := ST_Area(NEW.the_geom);
+    NEW.umfang := ST_Perimeter(NEW.the_geom);
+    RETURN NEW;
+  END;
+$BODY$
+LANGUAGE plpgsql VOLATILE
+COST 100;
+```
 
 ### Möglichkeiten mit QGIS
 #### Authentification
