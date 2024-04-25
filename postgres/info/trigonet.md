@@ -160,7 +160,9 @@ FROM
 WHERE
     st_isvalid(geometry) != TRUE
 ```
-Siehe auch: https://postgis.net/docs/using_postgis_dbmanagement.html#OGC_Validity
+Siehe auch: 
+- https://postgis.net/docs/using_postgis_dbmanagement.html#OGC_Validity
+- https://postgis.net/docs/ST_IsClosed.html
 
 oder zum fixen: 
 - https://postgis.net/docs/ST_RemoveRepeatedPoints.html
