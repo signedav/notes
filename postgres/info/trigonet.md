@@ -1,6 +1,3 @@
-## To Do:
-- [ ] Service Conf File (wenn nicht auf Server)
-
 ## Workshop 26. April
 ### PostgreSQL Allgemein
 #### Servers / Instances
