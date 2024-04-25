@@ -133,6 +133,8 @@ Doch das zeigt auf den Server...
 
 Lokales (oder auf Netzlaufwerk)...
 
+Kann eigentlich überall sein (e.g. default `~/.pg_service.conf` aber kann auch gesetzt werden.
+
 ```
 export PGSERVICEFILE=/home/dave/pg_service.conf 
 ```
