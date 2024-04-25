@@ -184,7 +184,7 @@ Aktivieren von autovacuum etc. so: https://github.com/opengisch/postgresql-admin
 
 #### Monitoring Tool
 
-- [ ] To do...
+- kein Standardtool - gibt verschiedene - hab (noch) keine Erfahrung damit gemacht.
 
 #### Editor Tracking Lösung
 Es gibt die normalen Logging-Funktionen, wie:
