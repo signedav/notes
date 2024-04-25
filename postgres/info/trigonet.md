@@ -1,6 +1,4 @@
 ## To Do:
-- [ ] Geometriechecks: PostGIS Script vorbereiten
-- [ ] Geometriechecks: QGIS Möglichkeiten auschecken
 - [ ] Service Conf File (wenn nicht auf Server)
 
 ## Workshop 26. April
@@ -134,15 +132,46 @@ COST 100;
 ```
 SHOW config_file;
 ```
-- [ ] Teste das aus inkl. Verbindung auf Docker (server)
+Doch das zeigt auf den Server...
+
+Lokales (oder auf Netzlaufwerk)...
+
+```
+export PGSERVICEFILE=/home/dave/pg_service.conf 
+```
+
+Dann kann ich auch supereasy:
+```
+export PGSERVICE=daves-local-gis
+```
+
+In QGIS kann ich auch je nach Profil ein anderes Service Conf machen...
 
 ##### Authentifications
+Bau Verbindung in QGIS und mach Authentificationfile...
 
 #### PG Modeller
 Demo...
 
 #### Geometriechecks
-- [ ] To do...
+##### PG
+```
+SELECT
+    st_isvaliddetail(geometry), st_isvalidreason(geometry)
+FROM
+    supersimple01.aoi
+WHERE
+    st_isvalid(geometry) != TRUE
+```
+Siehe auch: https://postgis.net/docs/using_postgis_dbmanagement.html#OGC_Validity
+
+oder zum fixen: 
+- https://postgis.net/docs/ST_RemoveRepeatedPoints.html
+- https://postgis.net/docs/ST_MakeValid.html
+
+##### QGIS
+- Vector > Geometry Tools
+- Oder auch Processing Toolbox > "geometry" und dort findet man Zeuch wie "Remove duplicate vertices"
 
 ### Montioring und Wartung
 
@@ -241,7 +270,7 @@ Nun in PostgreSQL kann man das machen, ist aber u.U. nicht so preformant. Habe I
 
 Wir haben gute Erfahrungen gemacht mit Cloud Optimized Geo Tiff (COG), die kann man auf ein Netzlaufwerk tun oder auf einen HTTP Server).
 
-### Was sie so nutzen
+## Was sie so nutzen
 
 MSSQL für Produktion und für Publikation
 
