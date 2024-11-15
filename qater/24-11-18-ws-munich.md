@@ -1,6 +1,5 @@
 # Anforderungen
 
-
 <details>
 <summary>
 
@@ -175,9 +174,9 @@ Siehe: https://www.youtube.com/embed/DgdfAf1GRa0
 ### Python
 
 - In der Python API ist grundsätzlich ziemlich alles was interessant ist exposed
-  - Beispiele sind zBs.
-    ➝ check mal Python Standalone Stuff ➝ vielleicht auch Beispiel
-- hat noch zBs. processing - wird aber mehr als Console Tool verwendet um processing Algorithmen im Core anzusteuern
+  - Beispiele;
+    - Einfaches Demo Ding https://github.com/whatnick/demo_qgis_app?tab=readme-ov-file
+- hat noch zBs. processing - wird aber mehr als Console Tool verwendet um processing Algorithmen im Core anzusteuern https://training.gismentors.eu/qgis-plugins/python/processing.html
 
 ### QGIS Quick
 
