@@ -142,11 +142,11 @@
 
 ![alt text](image-3.png)
 
-#### Deployen mit QGIS Deployement Toolbelt
+### Deployen mit QGIS Deployement Toolbelt
 
 Möglich mit <https://guts.github.io/qgis-deployment-cli/index.html>
 
-<iframe width="821" height="462" src="https://www.youtube.com/embed/DgdfAf1GRa0" title="Conférence QGIS FR 2023 - Démonstration QDT (QGIS Deployment Toolbelt)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Siehe: https://www.youtube.com/embed/DgdfAf1GRa0
 
 ### Was ist mit Plugins möglich / nicht möglich
 
@@ -157,38 +157,70 @@ Möglich mit <https://guts.github.io/qgis-deployment-cli/index.html>
 
 </details>
 
-Ansatz standalone Lösung
-Qt ist das Frameworks - da kombiniert man besser nicht Tk und Qt
-C++
-alles Nutzbar aus core / gui / analyzes / etc.
-Beispiele sind zBs. KADAS
-KADAS
-<https://www.swisstopo.admin.ch/de/kartendarstellungssystem-der-armee>
+<details>
+<summary>
 
-Python
-in der Python API ist grundsätzlich ziemlich alles was interessant ist exposed
-Beispiele sind zBs.
-➝ check mal Python Standalone Stuff ➝ vielleicht auch Beispiel
-hat noch zBs. processing - wird aber mehr als Console Tool verwendet um processing Algorithmen im Core anzusteuern
-QGIS Quick
-Ansteuerung mit QML
-Auf Mobile Apps ausgerichtet
-Relativ Limitiert
-Beispiele sind zBs. QField
-C++
-alles Nutzbar aus core / gui / analyzes / etc.
-➝ siehe auch
+## Ansatz standalone Lösung
 
-Abhängigkeiten QGIS
-Wechsel auf Qt 6
-Wechsel auf QGIS 4
-Wenn noch nichts produktiv geht vor 2026, dann lieber mit Qt 6 version arbeiten (dann ist man save nächste 7 Jahre diesbezüglich)...
-... und keine deprecated Sachen nutzen...
-Dann ist man aber flexibel
+</summary>
 
-Open Source Karma
-natürlich cool wenn man QGIS nutzt...
-... und noch cooler wenn man QGIS weiterbringt damit (auch an QGIS Entwicklungen macht/finanziert)
+> Qt ist das Frameworks - da kombiniert man besser nicht Tk und Qt
 
-Datenhaltung lokal
-Vermutlich GeoPackage vorstellen - ist einfach das Naheliegenste - wie der Austausch sein soll dann die Frage. Natürlich kann man GeoPackages nicht vergleichen etc... ...ausser mit Kart... ...oder QFieldCloud...
+### C++
+
+- alles Nutzbar aus core / gui / analyzes / etc.
+- Beispiele sind zBs. KADAS
+  - [KADAS](https://www.swisstopo.admin.ch/de/kartendarstellungssystem-der-armee)
+
+### Python
+
+- In der Python API ist grundsätzlich ziemlich alles was interessant ist exposed
+  - Beispiele sind zBs.
+    ➝ check mal Python Standalone Stuff ➝ vielleicht auch Beispiel
+- hat noch zBs. processing - wird aber mehr als Console Tool verwendet um processing Algorithmen im Core anzusteuern
+
+### QGIS Quick
+
+- Ansteuerung mit QML
+- Auf Mobile Apps ausgerichtet
+- Relativ Limitiert
+- Beispiele sind zBs. QField
+
+</details>
+
+<details>
+<summary>
+
+## Abhängigkeiten QGIS
+
+</summary>
+
+- Wechsel auf Qt 6
+- Wechsel auf QGIS 4
+- Wenn noch nichts produktiv geht vor 2026, dann lieber mit Qt 6 version arbeiten (dann ist man save nächste 7 Jahre diesbezüglich)...
+- ... und keine deprecated Sachen nutzen...
+- Dann ist man aber flexibel
+
+</details>
+
+<details>
+<summary>
+
+## Open Source Karma
+
+</summary>
+
+- natürlich cool wenn man QGIS nutzt...
+- ... und noch cooler wenn man QGIS weiterbringt damit (auch an QGIS Entwicklungen macht/finanziert)
+</details>
+
+<details>
+<summary>
+
+## Datenhaltung lokal
+
+</summary>
+
+- Vermutlich GeoPackage vorstellen - ist einfach das Naheliegenste - wie der Austausch sein soll dann die Frage. Natürlich kann man GeoPackages nicht vergleichen etc... ...ausser mit Kart... ...oder QFieldCloud...
+
+</details>
