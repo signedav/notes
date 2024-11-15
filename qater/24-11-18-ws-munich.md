@@ -1,10 +1,12 @@
 # Anforderungen
 <details><summary><h2>Es geht um</h2></summary>
+
 - Visualisierung / Bearbeitung
 - Validierung
 - Datenaustausch
 - Kommunikation mit Messgerät
 - Druck + Karte (Atlas Export)
+
 </details>
 
 <details><summary><h2>Probleme / Ansätze</h2></summary>
