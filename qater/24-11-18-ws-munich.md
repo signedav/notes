@@ -1,7 +1,12 @@
 # Anforderungen
 
+
+<details>
+<summary>
+
 ## Es geht um
-<details> <summary> Check it... </summary>
+
+</summary>
 
 - Visualisierung / Bearbeitung
 - Validierung
@@ -11,8 +16,12 @@
 
 </details>
 
+<details>
+<summary>
+
 ## Probleme / Ansätze
-<details> <summary> Check it... </summary>
+
+</summary>
 
 - Man möchte sich nicht abhängig machen vom Monopolisten VertiGIS und ESRI steckt drin.
   
@@ -26,9 +35,12 @@
 
 </details>
 
+<details>
+<summary>
+
 ## Status
 
-<details> <summary> Check it... </summary>
+</summary>
 
 - LDBV hat Prototypmässig Plugins entwickelt für QGIS ➝ bisschen Erfahrung gesammeln
 - LDBV Python und Qt Entwicklung und Prototyp gebaut um Daten zu sammeln - wenn man so ein Weg geht muss man alles nochmals entwickeln.
@@ -105,23 +117,45 @@
 #### Nicht Verfügbar
 - app - die QGIS Desktop Applikation
 
-Was ins gui und was in die app kommt ist jeweils Ermessenssache.
+> Was ins gui und was in die app kommt ist jeweils Ermessenssache.
 
 </details>
 
-Ansatz Pluginlösung
-QGIS Abspecken
-Panels und Toolbars zu verstecken
+<details>
+<summary>
 
-Möglichkeiten mit Interface Customization
+## Ansatz Pluginlösung
 
-Deployen mit QGIS Deployement Toolbelt
+</summary>
+
+### QGIS Abspecken
+
+#### Panels und Toolbars zu verstecken
+
+![](image.png)
+
+#### Möglichkeiten mit Interface Customization
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)
+
+#### Deployen mit QGIS Deployement Toolbelt
+
 Möglich mit <https://guts.github.io/qgis-deployment-cli/index.html>
-Was ist mit Plugins möglich / nicht möglich
-Tools / Formulare / Buttons, die Prozesse ansteuern
-Rechtsklick bleibt Rechtsklick / QGIS App bleibt halt QGIS App
-Ableiten bestehender Objekte nicht immer möglich
-Was waren ihre Limiten, dass sie davon abgekommen sind?
+
+<iframe width="821" height="462" src="https://www.youtube.com/embed/DgdfAf1GRa0" title="Conférence QGIS FR 2023 - Démonstration QDT (QGIS Deployment Toolbelt)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Was ist mit Plugins möglich / nicht möglich
+
+- Tools / Formulare / Buttons, die Prozesse ansteuern
+- Rechtsklick bleibt Rechtsklick / QGIS App bleibt halt QGIS App
+- Ableiten bestehender Objekte nicht immer möglich
+- Was waren ihre Limiten, dass sie davon abgekommen sind?
+
+</details>
 
 Ansatz standalone Lösung
 Qt ist das Frameworks - da kombiniert man besser nicht Tk und Qt
