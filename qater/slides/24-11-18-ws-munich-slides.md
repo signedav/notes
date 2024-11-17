@@ -1,6 +1,6 @@
 ---
-title: Superpower your Widgets
-description: Possiblities in QGIS and present QGIS plugins to override the relationeditor widget
+title: Workshop München LDBV
+description: Workshop
 theme: stylesheets/softteaching-theme.css
 customTheme: stylesheets/softteaching-theme
 verticalSeparator: --v--
@@ -13,7 +13,7 @@ revealOptions: {
 }
 ---
 
-# Workshop  München LDBV
+# Workshop München LDBV
 
 ## 18. November 2024
 
