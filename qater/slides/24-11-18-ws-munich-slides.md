@@ -100,6 +100,9 @@ revealOptions: {
 - Abhängikeiten QGIS
 - Datenhaltung / Austausch
 - Druck
+- what else?
+
+**Abschweifen erwünscht...**
 
 ---
 
@@ -109,9 +112,9 @@ revealOptions: {
 
 ### Aufbau
 
-- **core** (Canvas, Legende, Symbole, Models und Items, Providers, Geometrieklassen, QgsApplication (!=QgisApp, was die Objektindentifikation der App ist)
-- **gui** (Formulare, Widgets, Fields, Properties-Dialog aber auch Maptools, QgsInterface) - quasi einzelne Komponenten und auch virtuelle Klassen
-- **app** (die App, das Desktop Programm, die Menus, QgsAppInterface) iface (QgsInterface enthält virtelle classes, werden abgeleitet in QgsAppInterface. zBs. addToolBar kommuniziert dann mit QgsAppInterface in - den Plugins. Aber man könnte QgsInterface natürlich auch ableiten)
+- **core** (Canvas, Legende, Symbole, [Models und Items](https://doc.qt.io/qt-6/qtquick-modelviewsdata-modelview.html), Providers, Geometrieklassen, QgsApplication (!=QgisApp, was die Objektindentifikation der App ist)
+- **gui** (Formulare, Widgets, Fields, Properties-Dialog aber auch Maptools, `QgsInterface`) - quasi einzelne Komponenten und auch virtuelle Klassen
+- **app** (die App, das Desktop Programm, die Menus, `QgsAppInterface`) iface (`QgsInterface` enthält virtelle classes, werden abgeleitet in `QgsAppInterface`. zBs. `addToolBar` kommuniziert dann mit `QgsAppInterface` in den Plugins. Aber man könnte `QgsInterface` natürlich auch ableiten)
 
 ---
 
