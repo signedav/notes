@@ -22,12 +22,16 @@ from qgis.gui import (
 )
 from PyQt5 import QtGui, QtWidgets
 
-# 1. Was ist das genau?
+# Extends QApplication to provide access to QGIS specific resources such as theme paths, database paths etc.
 qgs = QgsApplication([], True)
 
-# 2. Was ist das genau?
+# set the provider plugin path (this creates provider registry)
+# create data item provider registry
+# create project instance if doesn't exist
+# QgsProject::instance();
+# Setup authentication manager for lazy initialization
+# Make sure we have a NetworkAccessManager created on the main thread
 qgs.initQgis()
-
 
 canvas = QgsMapCanvas()
 canvas.xyCoordinates.connect(lambda coords: coord_label.setText(f"{coords.x()}, {coords.y()}"))
@@ -63,9 +67,7 @@ QgsProject.instance().addMapLayer(rlayer)
 
 # set the map canvas layer set
 canvas.setLayers([vlayer,rlayer])
-
 canvas.setExtent(vlayer.extent())
 
-# 3. Was ist das genau?
+# starts the application
 qgs.exec_()
-    
