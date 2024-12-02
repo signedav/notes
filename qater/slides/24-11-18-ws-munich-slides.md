@@ -29,7 +29,9 @@ revealOptions: {
 - Validierung
 - Datenaustausch
 - Kommunikation mit Messgerät
-- Druck + Karte
+- Druck
+  - Text
+  - Karte
 
 ---
 
@@ -63,8 +65,8 @@ revealOptions: {
 - Python vs. C++
 - Gibt es vergleichbare Projekte?
 - Ist Kater überhaupt mit QGIS umsetzbar?
-- Primitive Datei / Datenhaltung - was wird empfohlen
-- weiteres?
+- Primitive Datei / Datenhaltung - was wird empfohlen (auch Postgres
+- weiteres?<>
 
 ---
 
@@ -303,3 +305,8 @@ Qt ist das Frameworks - da kombiniert man besser nicht Tk und Qt
 
 - Wird grunsätzlich nicht mit vollintegrierter QGIS Implementierung gewünscht
 - Evtl. Atlas Export interessant https://github.com/elpaso/qgis-atlas-export-function
+- Evt. Karten mit selber Darstellung wie in QGIS
+
+
+<!-- 
+- Inwiefern sind die QgisQuick möglichkeiten ohne C++ Nutzung? -->
