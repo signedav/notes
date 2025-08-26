@@ -1,0 +1,9 @@
+withqt6 true
+withpdal false
+compatibility to qt 5 in maintanance tool installed
+libqca-qt6-dev installiert
+pyqt6 installed
+pyqt6 dev tools installed
+scintilla installed und libs verknüpft als parameter
+keychain installed und libs verknüpft als parmeter 
+qwt 5 verknüpft
