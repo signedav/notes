@@ -11,7 +11,7 @@ cmake -DWITH_SERVER=TRUE ../QGIS
 /home/dave/dev/qgis/QGIS/build/Desktop-Debug/output/bin/qgis_mapserv.fcgi --version
 ```
 
-Now I created the local webservers stuff like here https://gitlab.com/signenotes/opengisch/projects_notes/blob/master/QGIS_server/setup.md
+Now I created the local webservers stuff like [here](qgis-local-server-notes.md)
 
 Ant the specific commands are:
 
@@ -60,7 +60,7 @@ curl http://qgis.demo/cgi-bin/qgis_mapserv.fcgi
 
 Dann musste ich die Berechtigungen auf alle Directories setzen:
 ``` 
-sudo chmod +x /home/dave /home/dave/dev /home/dave/dev/qgis /home/dave/dev/qgis/QGIS /home/dave/dev/qgis/QGIS/build /home/dave/dev/qgis/QGIS/build/Desktop-Debug /home/dave/dev/qgis/QGIS/build/Desktop-Debug/output /home/dave/dev/qgis/QGIS/build/Desktop-Debug/output/bin/
+sudo chmod +x /home/dave /home/dave/dev /home/dave/dev/qgis /home/dave/dev/qgis/QGIS2 /home/dave/dev/qgis/QGIS2/build /home/dave/dev/qgis/QGIS2/build/Desktop-Debug /home/dave/dev/qgis/QGIS2/build/Desktop-Debug/output /home/dave/dev/qgis/QGIS2/build/Desktop-Debug/output/bin/
 ```
 Dann ist est gegangen. Braucht halt so MAP Parameter...
 
@@ -86,4 +86,4 @@ cmake -DWITH_SERVER=TRUE ../QGIS
 
 And then you can test like usual...
 
-see for setup QGIS server https://gitlab.com/signenotes/opengisch/projects_notes/blob/master/QGIS_server/setup.md
+see for setup QGIS server qgis-local-server-notes.md
